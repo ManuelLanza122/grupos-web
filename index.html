@@ -1,24 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Top Grupos</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Continuar usando el bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .box {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 360px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    button {
+      margin-top: 20px;
+      background: #00ff99;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:disabled {
+      background: #555;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 <body>
 
-<h1>🔥 Directorio de Grupos</h1>
-<input id="search" placeholder="Buscar grupo..." onkeyup="searchGroups()">
+<div class="box">
+  <h1>📢 Apoya el bot</h1>
+  <p>Debes permanecer unos segundos para continuar usando el bot.</p>
 
-<div id="groups"></div>
+  <!-- ANUNCIO -->
+  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+  <script type="text/javascript">
+    aclib.runAutoTag({
+      zoneId: 'cjjcatbmoi',
+    });
+  </script>
 
-<a href="registro.html">Registrarse / Entrar</a>
+  <button id="continueBtn" disabled>
+    ⏳ Espera 10 segundos
+  </button>
+</div>
 
-<script type="text/javascript">
-aclib.runAutoTag({ zoneId: 'cjjcatbmoi' });
+<script>
+  let time = 10;
+  const btn = document.getElementById("continueBtn");
+
+  const timer = setInterval(() => {
+    time--;
+    btn.innerText = `⏳ Espera ${time} segundos`;
+    if (time <= 0) {
+      clearInterval(timer);
+      btn.disabled = false;
+      btn.innerText = "✅ Continuar";
+    }
+  }, 1000);
+
+  btn.onclick = () => {
+    // Regresa al bot
+    window.location.href = "https://t.me/TU_BOT_USERNAME";
+  };
 </script>
-<script src="https://unpkg.com/@supabase/supabase-js"></script>
-<script src="app.js"></script>
+
 </body>
 </html>
