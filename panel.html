@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Panel</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Usuario</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,16 +16,18 @@
 
 <button onclick="addGroup()">Publicar</button>
 
+<div id="ad-container" style="margin:20px 0; text-align:center;">
+<script type="text/javascript">
+aclib.runAutoTag({ zoneId: 'cjjcatbmoi' });
+</script>
+</div>
+
 <div class="section">
   <h2>Mis grupos</h2>
   <div id="myGroups"></div>
 </div>
 
 <button onclick="logout()">Cerrar sesión</button>
-  
-<script type="text/javascript">
-aclib.runAutoTag({ zoneId: 'cjjcatbmoi' });
-</script>
 
 <script src="https://unpkg.com/@supabase/supabase-js"></script>
 <script src="app.js"></script>
