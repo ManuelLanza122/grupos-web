@@ -7,13 +7,21 @@
 </head>
 <body>
 
-<h1>Publicar Grupo</h1>
+<h1>Publicar grupo</h1>
+
 <input id="name" placeholder="Nombre del grupo">
 <input id="link" placeholder="Link del grupo">
 <input id="category" placeholder="Categoría">
-<button onclick="addGroup()">Publicar</button>
-<button onclick="logout()">Salir</button>
 
+<button onclick="addGroup()">Publicar</button>
+
+<div class="section">
+  <h2>Mis grupos</h2>
+  <div id="myGroups"></div>
+</div>
+
+<button onclick="logout()">Cerrar sesión</button>
+  
 <script type="text/javascript">
 aclib.runAutoTag({ zoneId: 'cjjcatbmoi' });
 </script>
